@@ -1,0 +1,164 @@
+/* Set font family and size */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Add background color and padding to the container */
+  .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  
+  /* Style headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-top: 0;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  h6 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style paragraphs */
+  p {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Style links */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style lists */
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  ul li, ol li {
+    margin-bottom: 5px;
+  }
+  
+  /* Style section headings */
+  .section-heading {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  /* Style technical skills section */
+  .technical-skills {
+    margin-bottom: 30px;
+  }
+  
+  .technical-skills h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Style education section */
+  .education {
+    margin-bottom: 30px;
+  }
+  
+  .education h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .education h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .education p {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  /* Style professional experience section */
+  .professional-experience {
+    margin-bottom: 30px;
+  }
+  
+  .professional-experience h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .professional-experience h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .professional-experience p {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  /* Style projects section */
+  .projects {
+    margin-bottom: 30px;
+  }
+  
+  .projects h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .projects h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .projects ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .projects ul li {
+    margin-bottom: 5px;
+  }
+  
+  .projects a {
+    color: #28a745;
+  }
+  
+  .projects a:hover {
+    text-decoration: underline;
+  }
