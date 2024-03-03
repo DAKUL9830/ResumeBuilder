@@ -10,9 +10,9 @@ const navigate=useNavigate();
   
     const onFinish = async(values) => {
         try{
-           const user= await axios.post('api/user/login',values)
+           const response= await axios.post('api/user/login',values)
             message.success('Login successfull')
-            //localStorage.setItem("resumebuilder",JSON.stringify(user.data))
+            localStorage.setItem("resumebuilder",JSON.stringify(response.data))
             navigate('/home')
            }catch(error){
                message.error('Login failed')

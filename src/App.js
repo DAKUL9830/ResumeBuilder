@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import Resume from './components/Resume';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-//import Profile from './components/Profile';
-import { useStyles } from 'react';
+// import Resume from './components/Resume';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
+// import Typography from '@material-ui/core/Typography';
+// //import Profile from './components/Profile';
+// import { useStyles } from 'react';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -43,7 +43,7 @@ function App() {
          <Route path='/home' element ={<Home/>}/>
          <Route path='/profile' element ={<Profile/>}/>      
          <Route path='/login' element ={<Login/>}/>
-         <Route path='/sample/:id' element ={<Sample/>}/>
+         <Route path='/sample' element ={<Sample/>}/>
          <Route path='/register' element ={<Register/>}/>
        </Routes>
        </BrowserRouter>
@@ -56,12 +56,4 @@ function App() {
 
 export default App;
 
-// export function ProtectedRoute(props){
-//   if(localStorage.getItem('resumebuilder')){
-//     return props.children;
-//   }else{
-//     return <Navigate to ='/login'/>
-//   }
 
-  
-// }

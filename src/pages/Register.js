@@ -10,10 +10,11 @@ function Register() {
     const onFinish = async(values) => {
      setLoading(true)
         try{
-          await axios.post('api/user/register',values) 
-          setLoading(false)
+          const response=await axios.post('api/user/register',values) 
+         // setLoading(false)
+         console.log('Response data:', response.data);
          message.success('Registration successfull')
-          //localStorage.setItem("resumebuilder",JSON.stringify(user.data))
+          localStorage.setItem("resumebuilder",JSON.stringify(response.data))
          setLoading(false)
          navigate('/home')
         }catch(error){

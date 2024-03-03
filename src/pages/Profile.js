@@ -7,24 +7,33 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const {TabPane}=Tabs;
 function Profile() {
     const [loading,setLoading]=useState(false);
-    const user=JSON.parse(localStorage.getItem("resumebuilder"));
+    const navigate=useNavigate();
+    const user=JSON.parse(localStorage.getItem("resumebuilder"))||{};
+    console.log('User from localStorage:', user);
     const onFinish = async(values) => {
         setLoading(true)
+        if (!user || !user.id) {
+            setLoading(false);
+            message.error('User information is missing.');
+            return;
+        }
            try{
              const response=await axios.post('api/user/update',{...values,id:user.id}) ;
              localStorage.setItem("resumebuilder",JSON.stringify(response.data));
-             setLoading(false)
+             setLoading(false);
             message.success('Profile has been updated successfully')
-            
+            navigate('/sample')
            
            
            }catch(error){
             setLoading(false)
-               message.error('Update has beed failed')
+            console.error('Update failed:', error.response?.data || error.message);//log detailed error
+            message.error(`Update failed: ${error.response?.data?.message || error.message}`);
            }
           
          };
