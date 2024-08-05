@@ -1,59 +1,69 @@
+// import './App.css';
+// import React from 'react';
+// import Login from './pages/Login';
+// import Register from './pages/Register';
+// import Profile from './pages/Profile';
+// import Sample from './pages/templates';
+// import Home from './pages/Home';
+// import {BrowserRouter,Routes,Route} from 'react-router-dom';
+// import 'antd/dist/antd.css';
+// import ProtectedRoute from './ProtectedRoute';
+
+
+
+// function App() {
+  
+//   return (
+//     <div className="App">
+  
+//        <BrowserRouter>
+//        <Routes>
+//          <Route path='/' element ={<Home />}/>
+//          <Route path='/home' element ={<ProtectedRoute><Home/></ProtectedRoute>}/>
+//          <Route path='/profile' element ={<ProtectedRoute><Profile/></ProtectedRoute>}/>      
+//          <Route path='/login' element ={<Login/>}/>
+//          <Route path='/sample' element ={<ProtectedRoute><Sample/></ProtectedRoute>}/>
+//          <Route path='/register' element ={<Register/>}/>
+//        </Routes>
+//        </BrowserRouter>
+   
+      
+    
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import './App.css';
 import React from 'react';
-// import Resume from './components/Resume';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
-// //import Profile from './components/Profile';
-// import { useStyles } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'antd/dist/antd.css';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Sample from './pages/templates';
 import Home from './pages/Home';
-import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
-import 'antd/dist/antd.css';
-
-
-const stylesheet={
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: 2,
-  },
-  title: {
-    flexGrow: 1,
-  },
-}
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
-  //const styles=useStyles(stylesheet)
   return (
     <div className="App">
-      {/* <AppBar>
-        <Toolbar>
-        <Typography variant="h6" >Resume Builder</Typography>
-        </Toolbar>
-      </AppBar> */}
-      {/* <Resume/> */}
-       <BrowserRouter>
-       <Routes>
-         <Route path='/' element ={<Home/>}/>
-         <Route path='/home' element ={<Home/>}/>
-         <Route path='/profile' element ={<Profile/>}/>      
-         <Route path='/login' element ={<Login/>}/>
-         <Route path='/sample' element ={<Sample/>}/>
-         <Route path='/register' element ={<Register/>}/>
-       </Routes>
-       </BrowserRouter>
-   
-      
-    
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/home' element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/sample' element={<ProtectedRoute><Sample /></ProtectedRoute>} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
 
 

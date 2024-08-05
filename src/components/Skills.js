@@ -217,7 +217,7 @@ function Skills() {
                     },
                   ]}
                 >
-                  <Input placeholder="progLanguages" />
+                  <Input placeholder="progLanguages (add all in one line)" />
                 </Form.Item>
                 </div>
                 <div  className='col-md-1'>
@@ -261,7 +261,7 @@ function Skills() {
                     },
                   ]}
                 >
-                  <Input placeholder="Databases" />
+                  <Input placeholder="Databases (add all in one line)" />
                 </Form.Item>
                 </div>
                 <div className='col-md-1'>
@@ -304,7 +304,7 @@ function Skills() {
                     },
                   ]}
                 >
-                  <Input placeholder="Tools" />
+                  <Input placeholder="Tools (add all in one line)" />
                 </Form.Item>
                 </div>
                 <div className='col-md-1'>
@@ -347,7 +347,7 @@ function Skills() {
                     },
                   ]}
                 >
-                  <Input placeholder="Natural Languages" />
+                  <Input placeholder="Natural Languages (add all in one line)" />
                 </Form.Item>
                 </div>
                 <div className='col-md-1'>

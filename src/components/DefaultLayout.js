@@ -1,80 +1,38 @@
 import React from 'react';
-import {Button,Menu,Dropdown,Space} from 'antd';
-import {useNavigate,Link} from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import { Layout, Menu } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import 'antd/dist/antd.css';
 import '../resources/defaultlayout.css';
-//import Button from '@mui/material/Button'
 
+const { Header, Content, Footer } = Layout;
 
-function DefaultLayout(props) {
-    const user=JSON.parse(localStorage.getItem('resumebuilder'));
-    const navigate=useNavigate();
+const DefaultLayout = ({ children }) => {
+    const navigate = useNavigate();
 
-
-
-    const menu = (
-        
-          <Menu>
-          <Menu.Item>
-          <Link to='/home'>
-            <a target="_blank" rel="noopener noreferrer" >
-            Home
-            </a>
-            </Link>
-            </Menu.Item>
-            <Menu.Item>
-            <Link to='/profile'>
-            <a target="_blank" rel="noopener noreferrer" >
-            Profile
-            </a>
-            </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to='/login'>
-            <a target="_blank" rel="noopener noreferrer" >
-            Log out
-            </a>
-            </Link>
-            </Menu.Item>
-          </Menu>
-
-
-       
-    );
+    const handleLogout = () => {
+        localStorage.removeItem('resumebuilder');
+        navigate('/login');
+    };
 
     return (
-        <div className='layout'>
-             {/* <AppBar>
-        <Toolbar>
-        <Typography variant="h6" >Resume Builder</Typography>
-        </Toolbar>
-      </AppBar> */}
-      <div>
-        <AppBar>
-        <Toolbar>
-        <Typography variant="h6" >ResGENER</Typography>
-        {/* <Button className ="layout-button">Start</Button> */}
-       
-        <Dropdown
-        overlay={menu}
-        placement='bottomRight' 
-        
-       
-      >
-        <Button>Start</Button>
-      </Dropdown>
-     
-        
-       </Toolbar>
-      </AppBar> 
-      </div>
-      <div className='content'>
-          {props.children}
-        </div> 
-        </div>
-    )
-}
+        <Layout className="layout">
+            <Header>
+            <div className="logo-container">
+              <br/>
+                    <h1 className="logo-text">ResumeBuilder (beta)</h1> 
+                </div>
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} className="large-menu"> 
+                    <Menu.Item key="1" onClick={() => navigate('/home')}>Home</Menu.Item>
+                    <Menu.Item key="2" onClick={() => navigate('/profile')}>Profile</Menu.Item>
+                    <Menu.Item key="3" onClick={handleLogout}>Logout</Menu.Item>
+                </Menu>
+            </Header>
+            <Content style={{ padding: '0 50px' }}>
+                <div className="site-layout-content">{children}</div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>Resume Builder ©2024</Footer>
+        </Layout>
+    );
+};
 
-export default DefaultLayout
+export default DefaultLayout;

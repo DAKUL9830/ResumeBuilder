@@ -1,3 +1,27 @@
-.layout-button{
-    float:right;
-  }
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-right: 20px; /* Add space between the logo and the menu */
+}
+
+.large-menu .ant-menu-item {
+  font-size: 18px; /* Increase the font size */
+  padding: 0 20px; /* Increase the padding */
+}
+
+.large-menu .ant-menu-item:hover {
+  font-size: 20px; /* Slightly increase the font size on hover */
+}
+
+.layout .logo {
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  float: left;
+}

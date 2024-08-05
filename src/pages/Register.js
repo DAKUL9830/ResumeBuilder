@@ -1,108 +1,115 @@
-import React,{useState,useEffect} from 'react'
-import { Button, Checkbox, Form, Input, message,Spin } from 'antd';
-import '../resources/authentification.css';
-import {Link,useNavigate} from 'react-router-dom';
+
+
+import React, { useState } from 'react';
+import { Button, Form, Input, Typography, message, Spin, Progress } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import zxcvbn from 'zxcvbn';
+import '../resources/authentification.css';
+
+const { Title, Text } = Typography;
+
+const validationSchema = Yup.object().shape({
+  username: Yup.string().required('Please input your username!'),
+  password: Yup.string().required('Please input your password!'),
+});
 
 function Register() {
-  const [loading,setLoading]=useState(false)
-  const navigate=useNavigate();
-    const onFinish = async(values) => {
-     setLoading(true)
-        try{
-          const response=await axios.post('api/user/register',values) 
-         // setLoading(false)
-         console.log('Response data:', response.data);
-         message.success('Registration successfull')
-          localStorage.setItem("resumebuilder",JSON.stringify(response.data))
-         setLoading(false)
-         navigate('/home')
-        }catch(error){
-          setLoading(false)
-            message.error('Registration failed')
-        }
-       
-      };
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState(0);
 
-    
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
-    return (
-      
-        <div className='auth-parent'>
-           {loading&&<Spin/>}
-        <Form
-        
-     
-        layout='vertical'
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-      >
-           <h1>Register</h1>
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your username!',
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-  
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your password!',
-            },
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
+  const onPasswordChange = (event) => {
+    const password = event.target.value;
+    const strength = zxcvbn(password).score;
+    setPasswordStrength(strength);
+  };
 
-        <Form.Item
-          label="Confirm Password"
-          name="cpassword"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your password!',
-            },
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
-  
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-  
-        
-           <div  className='d-flex align-items-center justify-content-between'>
-           <h6>Already have account?</h6>
-           <Link to= '/login'>Click here to login</Link>
-          <Button type="primary" htmlType="submit">
-            Register
-          </Button>
-          </div>
-       
-      </Form>
+  const onSubmit = async (values) => {
+    setLoading(true);
+    try {
+      const response = await axios.post('/api/user/register', values);
+      if (response.status === 200) {
+        message.success('Registration successful');
+        navigate('/login');
+      } else {
+        message.error('Registration failed');
+      }
+    } catch (error) {
+      message.error('Registration failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="auth-container">
+      <div className="logo-container">
+        <h1 className="logo-text">ResumeBuilder (beta)</h1>
       </div>
-    )
-} 
+      <div className="auth-form">
+        <Title level={2}>Register</Title>
+        <Formik
+          initialValues={{ username: '', password: '' }}
+          validationSchema={validationSchema}
+          onSubmit={onSubmit}
+        >
+          {({ handleSubmit, handleChange, values, errors, touched }) => (
+            <Form layout="vertical" onFinish={handleSubmit}>
+              <Form.Item
+                label="Username"
+                validateStatus={errors.username && touched.username ? 'error' : ''}
+                help={errors.username && touched.username ? errors.username : ''}
+              >
+                <Input name="username" value={values.username} onChange={handleChange} autoComplete="username" />
+              </Form.Item>
 
-export default Register  
+              <Form.Item
+                label="Password"
+                validateStatus={errors.password && touched.password ? 'error' : ''}
+                help={errors.password && touched.password ? errors.password : ''}
+              >
+                <Input.Password
+                  name="password"
+                  value={values.password}
+                  onChange={(event) => {
+                    handleChange(event);
+                    onPasswordChange(event);
+                  }}
+                  autoComplete="new-password"
+                />
+              </Form.Item>
+
+              <Progress
+                percent={passwordStrength * 25}
+                showInfo={false}
+                strokeColor={
+                  passwordStrength < 2
+                    ? 'red'
+                    : passwordStrength < 4
+                    ? 'orange'
+                    : 'green'
+                }
+              />
+
+              <Form.Item>
+                <Button type="primary" htmlType="submit" block disabled={loading}>
+                  {loading ? <Spin /> : 'Register'}
+                </Button>
+              </Form.Item>
+
+              <Text>
+                Already have an account? <Link to="/login">Login</Link>
+              </Text>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </div>
+  );
+}
+
+export default Register;
+

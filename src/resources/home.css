@@ -1,5 +1,43 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
 .sample-cv {
-    width: 100%;
-    height: 500px; 
+    margin: 20px 0;
+    width: 80%;
+    height: 600px;
+    border: 1px solid #ccc;
     overflow: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.start-resume-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-resume-btn:hover {
+    background-color: #0056b3;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
 }

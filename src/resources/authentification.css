@@ -1,28 +1,39 @@
-.auth-parent{
-    height:100vh;
-    display:flex;
-    align-items:center;
+/* authentification.css */
+.auth-container {
+    display: flex;
     justify-content: center;
-
-
-}
-.auth-parent h1{
-    font-size:22px;
-    font-weight:bold;
-
-}
-
-.auth-parent form{
-    width:400px;
-    box-shadow: 0 0 3px gray;
-    padding: 20px;
-
-}
-
-.ant-spin{
-    position:absolute !important;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    z-index:10;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding-top: 60px; /* Add padding to make space for the logo */
+    flex-direction: column; /* For responsiveness */
   }
+  
+  .auth-form {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+  }
+  
+  .logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+  }
+  
+  .logo-text {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-right: 40px; /* Add space between the logo and the menu */
+  }
+  
+  

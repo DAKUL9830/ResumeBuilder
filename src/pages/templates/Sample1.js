@@ -1,8 +1,4 @@
 
-
-
-
-
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import DefaultLayout from '../../components/DefaultLayout';
@@ -107,8 +103,8 @@ function Sample1() {
               <ul className="mb-1 list-unstyled">
                 <li>{project.description}</li>
 <li>
-  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub Link</a>
-  {project.liveLink && (
+  <a href={project.gitHubLink} target="_blank" rel="noopener noreferrer">GitHub Link</a>
+  {project.gitHubLink && (
     <>
       &nbsp;|&nbsp;
       <a href={project.liveLink} target="_blank" rel="noopener noreferrer">Live Link</a>
@@ -118,6 +114,8 @@ function Sample1() {
 
 
               </ul>
+              
+          
             </div>
           ))}
         </Col>
