@@ -10,7 +10,7 @@ import axios from 'axios';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import '../resources/authentification.css';
-
+  
 const { Title, Text } = Typography;
 
 const validationSchema = Yup.object().shape({
