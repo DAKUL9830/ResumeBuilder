@@ -1,106 +1,11 @@
 
-// import React from 'react';
-// import {saveAs} from 'file-saver';
-// import {TextField, Button, Container} from '@material-ui/core';
-// import {Card, CardHeader, CardContent} from '@material-ui/core';
-// import {Paper, withStyles, Grid} from '@material-ui/core';
-// import {Row, Col} from 'react-bootstrap';
-
-// function Experience({handleClickBackward,value,download,submit,handleChangeCompany,handleChangePosition,handleChangeStartDate,handleChangeEndDate,handleChangeDescrWork}) {
-          
-  
-//     return (
-
-//         <Paper>
-       
-//     <Card>
-//         <CardHeader title ="Work Experience"/>
-//     </Card>
-//    <CardContent>
-//        <Grid container spacing={5} align items='center' lg={12}>
-//            <Grid item md={6} sm={12} xs={12} lg={15}>
-//     <TextField
-//     value={value.company}
-//     label="Company"
-//     onChange={handleChangeCompany}
-
-//     />
-//     </Grid>
-    
-//     <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//      value={value.position}
-//     label="Position"
-//     onChange={handleChangePosition}
-//     />
-//     </Grid>
-  
-//     <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//       value={value.startDate}
-//     label="When did you start"
-//     onChange={handleChangeStartDate}
-        
-//         />
-//         </Grid>
-//     <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//       value={value.endDate}
-//     label="If finished,when?"
-//     onChange={handleChangeEndDate}
-        
-//     />
-//     </Grid>
-//     <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//       value={value.descriptionWork}
-//     label="What is/was your work in the company?"
-//     onChange={handleChangeDescrWork}
-        
-//     />
-//     </Grid>
-//     <Button
-//         color='grey'
-//        >
-//           ADD
-//         </Button>
-  
-       
-//         </Grid>
-//         <Button
-//         color='grey'
-//         onSubmit={submit}
-//         >
-//           Submit
-//         </Button>
-//         <Button
-//         color='grey'
-//         onClick={download}
-//         >
-//           Download
-//         </Button>
-
-//         <Button
-//         color='grey'
-//         onClick={handleClickBackward}>
-//           BACK
-//         </Button>
-
-         
-//         </CardContent>
-//         </Paper>
-//     )
-// }
-
 // export default Experience
 
 import React from 'react';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Space } from 'antd';
+import { Button, Form, Input } from 'antd';
 const {TextArea}=Input;
-const onFinish = (values) => {
-  console.log('Received values of form:', values);
-};
+
 
 //import {Form,Input} from 'antd';
 //const {TextArea} =Input;
@@ -108,34 +13,7 @@ const onFinish = (values) => {
 function Experience() {
   return (
     <div>
-            {/* <div className='row'>
-                <div className='col-md-4'>
-                    <Form.Item name='company' label='Company' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                    </div>
-                    <div className='col-md-4'>
-                    <Form.Item name='position' label='Position' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                    </div>
-                    <div className='col-md-4'>
-                    <Form.Item name='whenDidYouStart' label='When did you start?' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                    </div>
-                    <div className='col-md-12'>
-                    <Form.Item name='ifFinishedWhen' label='If finished,when?' rules={[{required:true}]}>
-                       <TextArea/>
-                    </Form.Item>
-                </div>
-                <div className='col-md-12'>
-                    <Form.Item name='whatIsYourInTheCompany' label='What is/was your work in the company?' rules={[{required:true}]}>
-                       <TextArea/>
-                    </Form.Item>
-                </div>
-
-            </div> */}
+           
 
 
 <h4><b>Experience</b></h4>

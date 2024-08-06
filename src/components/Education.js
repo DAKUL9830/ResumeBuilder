@@ -1,90 +1,10 @@
-// import React from 'react';
-// import {TextField, Button, Container} from '@material-ui/core';
-// import {Card, CardHeader, CardContent} from '@material-ui/core';
-// import {Paper, withStyles, Grid} from '@material-ui/core';
-// import {Row, Col} from 'react-bootstrap';
 
-// function Education({handleClickForward,handleClickBackward,value,handleChangeSchool,handleChangeRelCourse,handleChangeGradeM,handleChangeGradeY}) {
-
-  
-//     return (
-
-//         <Paper>
-       
-//     <Card>
-//         <CardHeader title ="Your Education"/>
-//     </Card>
-//    <CardContent>
-//        <Grid container spacing={2} align items='center' lg={12}>
-//            <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//      value={value.school}
-//     label="School"
-//     onChange={handleChangeSchool}
-
-//     />
-//     </Grid>
-    
-//     <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//      value={value.relevantCoursework}
-//     label="Relevant Coursework"
-//     onChange={handleChangeRelCourse}
-    
-//     />
-//     </Grid>
-  
-//     <Grid item md={6} sm={12} xs={12} lg={6}>
-//     <TextField
-//       value={value.graduationMonth}
-//     label="Graduation Month"
-//     onChange={handleChangeGradeM}
-    
-        
-//         />
-//         </Grid>
-//     <Grid item md={6} sm={12} xs={12} lg={6}> 
-//     <TextField
-//       value={value.graduationYear}
-//     label="Graduation Year"
-//     onChange={handleChangeGradeY}
-     
-        
-//     />
-//     </Grid>
-//     <Button
-//         color='grey'
-//        >
-//           ADD
-//         </Button>
-  
-       
-//         </Grid>
-//         <Button
-//         color='grey'
-//         onClick={handleClickForward}>
-//           NEXT
-//         </Button>
-
-//         <Button
-//         color='grey'
-//         onClick={handleClickBackward}>
-//           BACK
-//         </Button>
-
-         
-//         </CardContent>
-//         </Paper>
-//     )
-// }
-
-// export default Education
 
 
 import React from 'react';
 //import {Form,Input} from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Space } from 'antd'
+import { Button, Form, Input } from 'antd'
 
 
 function Education() {
@@ -93,29 +13,7 @@ function Education() {
   // };
   return (
     <div>
-            {/* <div className='row'>
-                <div className='col-md-5'>
-                    <Form.Item name='school' label='School' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                    </div>
-                    <div className='col-md-5'>
-                    <Form.Item name='relevantCourseWork' label='Relevant CourseWork' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                    </div>
-                    <div className='col-md-5'>
-                    <Form.Item name='graduationMonth' label='Graduation Month' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                    </div>
-                    <div className='col-md-5'>
-                    <Form.Item name='graduationYear' label='Graduation Year' rules={[{required:true}]}>
-                       <Input/>
-                    </Form.Item>
-                </div>
-
-            </div> */}
+           
 
 
   <h4><b>Education</b></h4>
